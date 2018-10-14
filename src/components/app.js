@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-rout
 import Header from './header';
 import EntryListPane from './views/entry-list-pane';
 import EntryAddPane from './views/entry-add-pane';
+import Login from './login';
 
 export default class App extends React.Component {
 
@@ -17,8 +18,9 @@ export default class App extends React.Component {
           <Switch>
             {/* <Route exact path="/:entryId" component={ } /> */}
             {/* TODO: are multiple redirects ok to put here? does switch break on a redirect? */}
-            <Redirect exact from="/" to="/home" />
-            <Route exact path="/home" component={EntryListPane} />
+            <Redirect exact from="/" to="/login" />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/journal" component={EntryListPane} />
             <Route exact path="/add-entry" component={EntryAddPane} />
           </Switch>
         </Router>
