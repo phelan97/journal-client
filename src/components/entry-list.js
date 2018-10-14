@@ -22,10 +22,14 @@ export default function EntryList() {
   });
   return (
     <React.Fragment>
-      <h2>Entry list</h2>
       <ul>
         {entries}
       </ul>
+     {/* TODO: move into a generic pagination component? */}
+     <div>
+       <button>Prev</button>
+       <button>Next</button>
+     </div>
     </React.Fragment>
   );
 }
