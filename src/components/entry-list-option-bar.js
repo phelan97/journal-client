@@ -8,7 +8,7 @@ export default function EntryListOptionBar() {
       {/* FIXME: DOES NOT SAVE THE STATE OF THE ENTRY OR WARN THE USER BEFORE GOING BACK */}
       {/* TODO: I'm also not sure what this does to browser history */}
       <button>
-        <Link to="/home">Back</Link>
+        <Link to="/journal">Back</Link>
       </button>
       <button>Delete entry</button>
       <button>Save</button>

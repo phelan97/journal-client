@@ -5,6 +5,7 @@ import Header from './header';
 import EntryListPane from './views/entry-list-pane';
 import EntryAddPane from './views/entry-add-pane';
 import Login from './login';
+import PageNotFound from './page-not-found.js'
 
 export default class App extends React.Component {
 
@@ -22,6 +23,7 @@ export default class App extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/journal" component={EntryListPane} />
             <Route exact path="/add-entry" component={EntryAddPane} />
+            <Route component={PageNotFound} />
           </Switch>
         </Router>
       </React.Fragment>
