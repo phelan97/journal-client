@@ -5,8 +5,10 @@ import './login.css';
 export default function Login() {
   return (
     <form>
-      <input class="username-field" type="text" />
-      <input class="password-field" type="text" />
+      <label for="username">Username</label>
+      <input class="username-field" name="username" type="text" />
+      <label for="password">Password</label>
+      <input class="password-field" name="password" type="text" />
       <button type="submit">Log In</button>
       <button class="register-button">Register</button>
     </form>

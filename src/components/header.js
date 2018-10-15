@@ -2,5 +2,10 @@
 import React from 'react';
 
 export default function Header() {
-  return <h1>header</h1>;
+  return (
+    <header>
+      <h1>Header</h1>
+      <button>Log out</button>
+    </header>
+  );
 }
