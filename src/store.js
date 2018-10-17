@@ -2,13 +2,14 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 
 import authReducer from './reducers/auth';
-import journalReducer from './reducers/journal';
-import {loadAuthToken, setAuthToken, refreshAuthToken} from './local-storage';
+import userDataReducer from './reducers/user-data';
+import {loadAuthToken} from './local-storage';
+import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 const store = createStore(
     combineReducers({
         auth: authReducer,
-        journal: journalReducer
+        data: userDataReducer
     }),
     applyMiddleware(thunk)
 );

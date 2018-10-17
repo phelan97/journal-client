@@ -3,36 +3,36 @@ import {saveAuthToken, clearAuthToken} from '../local-storage';
 import {API_BASE_URL} from '../config';
 import { normalizeResponseErrors } from './utils';
 
-const SET_AUTH_TOKEN = "SET_AUTH_TOKEN";
+export const SET_AUTH_TOKEN = "SET_AUTH_TOKEN";
 export const setAuthToken = (authToken) => ({
   type: SET_AUTH_TOKEN,
   authToken
 });
 
-const CLEAR_AUTH = "CLEAR_AUTH";
+export const CLEAR_AUTH = "CLEAR_AUTH";
 export const clearAuth = () => ({
   type: CLEAR_AUTH
 });
 
-const AUTH_REQUEST = "AUTH_REQUEST";
+export const AUTH_REQUEST = "AUTH_REQUEST";
 export const authRequest = () => ({
   type: AUTH_REQUEST
 });
 
-const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
 export const authSuccess = (currentUser) => ({
   type: AUTH_SUCCESS,
   currentUser
 });
 
-const AUTH_ERROR = "AUTH_ERROR";
+export const AUTH_ERROR = "AUTH_ERROR";
 export const authError = (error) => ({
   type: AUTH_ERROR,
   error
 });
 
 // TODO: remove if not in use
-const SHOW_LOGOUT_WARNING = "DISPLAY_LOGOUT_WARNING";
+export const SHOW_LOGOUT_WARNING = "DISPLAY_LOGOUT_WARNING";
 export const showLogoutWarning = (logoutWarningVisible) => ({
   type: SHOW_LOGOUT_WARNING,
   logoutWarningVisible
