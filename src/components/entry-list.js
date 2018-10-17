@@ -13,9 +13,9 @@ export default function EntryList() {
   const entries = dummyData.map(element => {
     return (
       <li key={element.id}>
-        <div class="entry-card">
-          <span class="entry-date">{element.date}</span>
-          <span class="entry-preview">{element.preview}</span>
+        <div className="entry-card">
+          <span className="entry-date">{element.date}</span>
+          <span className="entry-preview">{element.preview}</span>
         </div>
       </li>
     );

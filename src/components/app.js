@@ -10,7 +10,8 @@ import PageNotFound from './page-not-found.js'
 export default class App extends React.Component {
 
   // TODO: root should redirect to a login screen, which then redirects to /home on auth (once auth is added)
-
+  // TODO: track history and configure connected components with router
+  
   render() {
     return (
       <React.Fragment>
@@ -18,7 +19,6 @@ export default class App extends React.Component {
         <Router>
           <Switch>
             {/* <Route exact path="/:entryId" component={ } /> */}
-            {/* TODO: are multiple redirects ok to put here? does switch break on a redirect? */}
             <Redirect exact from="/" to="/login" />
             <Route exact path="/login" component={Login} />
             <Route exact path="/journal" component={EntryListPane} />

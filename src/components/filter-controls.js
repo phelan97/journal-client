@@ -5,7 +5,7 @@ import './filter-controls.css';
 export default function FilterControls() {
   return (
     <form>
-      <input class="search-field" type="text" />
+      <input id="search-field" type="text" />
       <select name="month">
         <option value="january">January</option>
       </select>

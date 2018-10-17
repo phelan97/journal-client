@@ -48,7 +48,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 export const login = (email, password) => dispatch => {
   dispatch(authRequest)
   return (
-    fetch(`${API_BASE_URL}/login`, {
+    fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -69,9 +69,7 @@ export const login = (email, password) => dispatch => {
               : 'Unable to log in. Please try again';
       dispatch(authError(err));
 
-      return Promise.reject(
-        new Error(message)
-      );
+      // TODO: return error with Promise.reject
     })
   );
 };
@@ -79,7 +77,7 @@ export const login = (email, password) => dispatch => {
 export const refreshAuthToken = () => (dispatch, getState) => {
   dispatch(authRequest());
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/refresh`, {
+  return fetch(`${API_BASE_URL}/auth/refresh`, {
     method: 'POST',
     headers: {
         Authorization: `Bearer ${authToken}`

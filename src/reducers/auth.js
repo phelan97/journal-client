@@ -36,6 +36,7 @@ export default function authReducer(state=initialState, action) {
       return {
         ...state,
         loading: false,
+        error: null,
         currentUser: action.currentUser
       };
     case AUTH_ERROR:
