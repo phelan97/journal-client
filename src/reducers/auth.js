@@ -25,7 +25,8 @@ export default function authReducer(state=initialState, action) {
       return {
         ...state,
         authToken: null,
-        currentUser: null
+        currentUser: null,
+        loggedIn: false
       };
     case AUTH_REQUEST:
       return {
@@ -38,7 +39,8 @@ export default function authReducer(state=initialState, action) {
         ...state,
         loading: false,
         error: null,
-        currentUser: action.currentUser
+        currentUser: action.currentUser,
+        loggedIn: true
       };
     case AUTH_ERROR:
       return {

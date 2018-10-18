@@ -4,7 +4,7 @@ import {Field, reduxForm} from 'redux-form';
 import {login} from '../actions/auth';
 import './login.css';
 
-class Login extends React.Component{
+class LoginForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit(values =>
@@ -23,4 +23,4 @@ class Login extends React.Component{
 
 export default reduxForm({
   form: 'login'
-})(Login);
+})(LoginForm);

@@ -12,3 +12,8 @@ export default function EntryListPane() {
     </main>
   )
 }
+
+// import {reduxForm} from 'redux-form';
+// export default reduxForm({
+//   form: 'login'
+// })(EntryListPane);

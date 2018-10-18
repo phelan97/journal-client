@@ -1,32 +1,22 @@
 
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
+import Entry from './entry';
 import {fetchProtectedData} from '../actions/user-data';
 import './entry-list.css';
 
 class EntryList extends React.Component {
 
-  componentDidMount(prevProps) {
-    console.log('component mounted');
+  componentDidMount() {
     this.props.dispatch(fetchProtectedData());
   }
 
   render() {
-    console.log(this.props.data);
-
-    const dummyData = [
-      {preview: 'Lorem ipsum dolor sit amet', date:'10/12/2018', id:1},
-      {preview: 'second post', date:'10/13/2018', id:2},
-      {preview: 'third post', date:'10/14/2018', id:3}
-    ];
-    
-    const entries = dummyData.map(element => {
+    const entries = this.props.data.entries.map(element => {
+      const dateStr = new Date(element.date).toLocaleDateString();
       return (
         <li key={element.id}>
-          <div className="entry-card">
-            <span className="entry-date">{element.date}</span>
-            <span className="entry-preview">{element.preview}</span>
-          </div>
+          <Entry dateStr={dateStr} content={element.content} id={element.id}/>
         </li>
       );
     });

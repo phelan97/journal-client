@@ -14,9 +14,17 @@ export const fetchProtectedDataError = error => ({
   error
 });
 
+export const DELETE_ENTRY_SUCCESS = "DELETE_ENTRY_SUCCESS";
+export const deleteEntrySuccess = id => {
+  console.log('delete with id', id);
+  return {
+    type: DELETE_ENTRY_SUCCESS,
+    id
+  }
+};
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    console.log('fetch from ' + API_BASE_URL + ' with token ' + authToken);
     return fetch(`${API_BASE_URL}/entries`, {
         method: 'GET',
         headers: {
@@ -26,8 +34,23 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
-    .catch(err => {
-        dispatch(fetchProtectedDataError(err));
-    });
+    .then((data) => dispatch(fetchProtectedDataSuccess(data)))
+    .catch(err => dispatch(fetchProtectedDataError(err)));
+}
+
+export const deleteEntry = (id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/entries/${id}`, {
+    method: 'DELETE',
+    headers: {
+        // Provide our auth token as credentials
+        Authorization: `Bearer ${authToken}`
+    }
+  })
+  .then((res) => {
+    dispatch(deleteEntrySuccess(id));
+  })
+  .catch(err => {
+    console.log(err);
+  })
 }

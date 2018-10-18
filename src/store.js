@@ -1,6 +1,7 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import authReducer from './reducers/auth';
 import userDataReducer from './reducers/user-data';
@@ -13,10 +14,10 @@ const store = createStore(
         data: userDataReducer,
         form: formReducer
     }),
-    applyMiddleware(thunk)
+    composeWithDevTools(applyMiddleware(thunk))
 );
 
-// Try to grab authToken from localStorage
+//Try to grab authToken from localStorage
 const authToken = loadAuthToken();
 if (authToken) {
     const token = authToken;
