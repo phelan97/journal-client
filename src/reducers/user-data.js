@@ -4,7 +4,7 @@ import {
 } from '../actions/user-data';
 
 const initialState = {
-  data: '',
+  entries: [],
   error: null
 };
 
@@ -12,7 +12,7 @@ export default function userDataReducer(state = initialState, action) {
   if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
      return {
        ...state,
-        data: action.data,
+        entries: action.entries,
         error: null
       };
   } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {

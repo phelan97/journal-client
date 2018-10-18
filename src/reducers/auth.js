@@ -10,7 +10,8 @@ const initialState = {
   authToken: null,
   currentUser: null,
   loading: false,
-  error: null
+  error: null,
+  loggedIn: false
 };
 
 export default function authReducer(state=initialState, action) {
