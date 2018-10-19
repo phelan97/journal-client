@@ -5,6 +5,7 @@ import {
   DELETE_ENTRY_SUCCESS,
   UPDATE_ENTRY_SUCCESS,
   ADD_ENTRY_SUCCESS,
+  SET_EDITING
 } from '../actions/user-data';
 
 const initialState = {
@@ -50,6 +51,11 @@ export default function userDataReducer(state = initialState, action) {
           }
           return entry;
         })
+      }
+    case SET_EDITING:
+      return {
+        ...state,
+        editId: action.editId
       }
     default:
       return state;

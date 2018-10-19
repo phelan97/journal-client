@@ -115,3 +115,9 @@ export const addEntry = (data) => (dispatch, getState) => {
   .then(data => dispatch(addEntrySuccess(data)))
   .catch(err => dispatch(addEntryError(err)));
 };
+
+export const SET_EDITING = "SET_EDITING";
+export const setEditing = editId => ({
+  type: SET_EDITING,
+  editId
+})
