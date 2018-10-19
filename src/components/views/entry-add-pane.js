@@ -1,19 +1,24 @@
 
 import React from 'react';
-import EntryListOptionBar from '../entry-list-option-bar';
+import {reduxForm} from 'redux-form';
+import requiresLogin from '../requires-login';
+import AddEntryOptionBar from '../add-entry-option-bar';
 import './entry-add-pane.css';
+// import {reduxForm} from 'redux-form'
 
-export default function EntryListPane() {
-  return (
-    <main>
-      {/* FIXME: configure */}
-      <textarea></textarea>
-      <EntryListOptionBar />
-    </main>
-  )
+class EntryAddPane extends React.Component {
+  render() {
+    return (
+      <main>
+        {/* FIXME: configure */}
+        <textarea></textarea>
+        <AddEntryOptionBar />
+      </main>
+    );
+  }
 }
 
-// import {reduxForm} from 'redux-form';
-// export default reduxForm({
-//   form: 'login'
-// })(EntryListPane);
+const options = {
+  form: 'post-entry'
+};
+export default requiresLogin()(reduxForm(options)(EntryAddPane));

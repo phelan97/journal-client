@@ -14,21 +14,22 @@ export const fetchProtectedDataError = error => ({
   error
 });
 
-export const DELETE_ENTRY_SUCCESS = "DELETE_ENTRY_SUCCESS";
-export const deleteEntrySuccess = id => {
-  console.log('delete with id', id);
-  return {
-    type: DELETE_ENTRY_SUCCESS,
-    id
-  }
-};
+export const SET_SEARCH_FILTER = "SET_SEARCH_FILTER";
+export const setSearchFilter = searchFilter => ({
+  type: SET_SEARCH_FILTER,
+  searchFilter
+})
 
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/entries`, {
+    let reqUrl = `${API_BASE_URL}/entries`;
+    const filter = getState().data.searchFilter;
+    if(filter) {
+      reqUrl += ('?filter=' + filter);
+    }
+    return fetch(reqUrl, {
         method: 'GET',
         headers: {
-            // Provide our auth token as credentials
             Authorization: `Bearer ${authToken}`
         }
     })
@@ -38,12 +39,17 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     .catch(err => dispatch(fetchProtectedDataError(err)));
 }
 
+export const DELETE_ENTRY_SUCCESS = "DELETE_ENTRY_SUCCESS";
+export const deleteEntrySuccess = id => ({
+  type: DELETE_ENTRY_SUCCESS,
+  id
+});
+
 export const deleteEntry = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/entries/${id}`, {
     method: 'DELETE',
     headers: {
-        // Provide our auth token as credentials
         Authorization: `Bearer ${authToken}`
     }
   })
@@ -51,6 +57,59 @@ export const deleteEntry = (id) => (dispatch, getState) => {
     dispatch(deleteEntrySuccess(id));
   })
   .catch(err => {
+    // FIXME:
     console.log(err);
   })
 }
+
+export const UPDATE_ENTRY_SUCCESS = "UPDATE_ENTRY_SUCCESS";
+export const updateEntrySuccess = updatedEntry => ({
+  type: UPDATE_ENTRY_SUCCESS,
+  updatedEntry
+});
+
+export const UPDATE_ENTRY_ERROR = "UPDATE_ENTRY_ERROR";
+export const updateEntryError = error => ({
+  type: UPDATE_ENTRY_ERROR,
+  error
+})
+
+export const updateEntry = (id, newData) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/entries/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newData)
+  })
+  .then(res => dispatch(updateEntrySuccess(res)))
+  .catch(err => dispatch(updateEntryError(err)));
+};
+
+export const ADD_ENTRY_SUCCESS = "ADD_ENTRY_SUCCESS";
+export const addEntrySuccess = entry => ({
+  type: ADD_ENTRY_SUCCESS,
+  entry
+});
+
+export const ADD_ENTRY_ERROR = "ADD_ENTRY_ERROR";
+export const addEntryError = error => ({
+  type: ADD_ENTRY_ERROR,
+  error
+});
+
+export const addEntry = (data) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/entries`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => dispatch(addEntrySuccess(res)))
+  .catch(err => dispatch(addEntryError(err)));
+};

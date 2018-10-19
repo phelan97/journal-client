@@ -12,6 +12,8 @@ class EntryList extends React.Component {
   }
 
   render() {
+    //const entriesToShow = this.props.data.entries.splice()
+
     const entries = this.props.data.entries.map(element => {
       const dateStr = new Date(element.date).toLocaleDateString();
       return (

@@ -2,7 +2,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {login} from '../actions/auth';
-import './login.css';
+import './login-form.css';
 
 class LoginForm extends React.Component {
   render() {
@@ -15,7 +15,6 @@ class LoginForm extends React.Component {
         <label htmlFor="password">Password</label>
         <Field name="password" component="input" type="password" id="password-field" />
         <button type="submit" onSubmit={this.handleSubmit}>Log In</button>
-        <button id="register-button">Register</button>
       </form>
     );
   }

@@ -1,11 +1,13 @@
 
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Switch, Redirect, withRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import LandingPage from './landing-page';
 import Header from './header';
 import EntryListPane from './views/entry-list-pane';
 import EntryAddPane from './views/entry-add-pane';
-import Login from './login';
 import PageNotFound from './page-not-found.js'
+import RegisterForm from './register-form';
 
 export default class App extends React.Component {
 
@@ -22,6 +24,7 @@ export default class App extends React.Component {
             {/* <Route exact path="/:entryId" component={ } /> */}
             <Redirect exact from="/" to="/login" />
             <Route exact path="/login" component={LandingPage} />
+            <Route exact path="/register" component={RegisterForm} />
             <Route exact path="/journal" component={EntryListPane} />
             <Route exact path="/add-entry" component={EntryAddPane} />
             <Route component={PageNotFound} />
@@ -31,6 +34,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
-export default withRouter(connect(stateToProps)(App))

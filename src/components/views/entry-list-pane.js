@@ -1,10 +1,11 @@
 
 import React from 'react';
+import requiresLogin from '../requires-login';
 import FilterControls from '../filter-controls';
 import EntryList from '../entry-list';
 import EntryOptionBar from '../entry-option-bar';
 
-export default function EntryListPane() {
+function EntryListPane() {
   return (
     <main>
       <FilterControls />
@@ -13,3 +14,5 @@ export default function EntryListPane() {
     </main>
   )
 }
+
+export default requiresLogin()(EntryListPane);

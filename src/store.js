@@ -5,6 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import authReducer from './reducers/auth';
 import userDataReducer from './reducers/user-data';
+import pageReducer from './reducers/page';
 import {loadAuthToken} from './local-storage';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
@@ -12,6 +13,7 @@ const store = createStore(
     combineReducers({
         auth: authReducer,
         data: userDataReducer,
+        page: pageReducer,
         form: formReducer
     }),
     composeWithDevTools(applyMiddleware(thunk))
