@@ -84,7 +84,8 @@ export const updateEntry = (id, newData) => (dispatch, getState) => {
     },
     body: JSON.stringify(newData)
   })
-  .then(res => dispatch(updateEntrySuccess(res)))
+  .then(res => res.json())
+  .then(data => dispatch(updateEntrySuccess(data)))
   .catch(err => dispatch(updateEntryError(err)));
 };
 
@@ -110,6 +111,7 @@ export const addEntry = (data) => (dispatch, getState) => {
     },
     body: JSON.stringify(data)
   })
-  .then(res => dispatch(addEntrySuccess(res)))
+  .then(res => res.json())
+  .then(data => dispatch(addEntrySuccess(data)))
   .catch(err => dispatch(addEntryError(err)));
 };
