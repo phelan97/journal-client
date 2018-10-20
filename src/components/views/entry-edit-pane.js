@@ -8,6 +8,7 @@ import EditEntryOptionBar from '../edit-entry-option-bar';
 import {deleteEntry, updateEntry} from '../../actions/user-data';
 import './entry-add-pane.css';
 
+// TODO: breaks on refresh. Use localStorage
 class EntryEditPane extends React.Component {
 
   state = {
@@ -50,7 +51,7 @@ class EntryEditPane extends React.Component {
     if(this.state.noEntryError) {
       return (
         <main>
-          <div>Could not find that entry</div>
+          <div>Could not locate entry</div>
           <Link to="/journal">Back</Link>
         </main>
       );
