@@ -16,9 +16,9 @@ code {
 }
 
 main {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+  margin-left: auto; margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* Position and sizing of burger button */

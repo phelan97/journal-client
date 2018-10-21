@@ -12,27 +12,24 @@ class EntryList extends React.Component {
   }
 
   render() {
-    //const entriesToShow = this.props.data.entries.splice()
-
-    const entries = this.props.data.entries.map(element => {
+    console.log('data from filteredItems:', this.props.filteredItems);
+    
+    const entriesToRender = this.props.filteredItems.map(element => {
       const dateStr = new Date(element.date).toLocaleDateString();
-      return (
-        <li key={element.id}>
-          <Entry dateStr={dateStr} content={element.content} id={element.id}/>
-        </li>
-      );
+        return (
+          <li key={element.id}>
+            <Entry dateStr={dateStr} content={element.content} id={element.id} />
+          </li>
+        );
     });
+
+    console.log('data from entriesToRender:', entriesToRender);
 
     return (
       <React.Fragment>
         <ul>
-          {entries}
+          {entriesToRender}
         </ul>
-       {/* TODO: move into a generic pagination component? */}
-       <div>
-         <button>Prev</button>
-         <button>Next</button>
-       </div>
       </React.Fragment>
     );
   };

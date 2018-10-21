@@ -65,6 +65,7 @@ class EntryEditPane extends React.Component {
   }
 }
 
+// TODO: wrap with requiresLogin
 const mapStateToProps = (state) => ({
   editId: state.data.editId,
   entry: state.data.entries.find(entry => entry.id === state.data.editId)

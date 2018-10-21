@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
       <form onSubmit={this.props.handleSubmit(values =>
         this.props.dispatch(login(values.email, values.password))
         )}>
+        <legend>Log in</legend>
         <label htmlFor="email">Email</label>
         <Field name="email" component="input" type="text" id="email-field" />
         <label htmlFor="password">Password</label>

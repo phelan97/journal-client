@@ -6,15 +6,17 @@ import LoginForm from './login-form';
 import './landing-page.css';
 
 function LandingPage(props) {
-  if(props.loggedIn) {
+  if(props.loggedIn) { 
     console.log(props.loggedIn);
     return <Redirect to="/journal" />
   }
 
   return (
     <main>
-      <LoginForm />
-      <Link to='/register'>Register</Link>
+      <div className="landing-container">
+        <LoginForm />
+        <Link to='/register'>Register</Link>
+      </div>
     </main>
   );
 }

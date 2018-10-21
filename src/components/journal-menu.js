@@ -11,7 +11,6 @@ export default class JournalMenu extends React.Component {
   render() {
     return (
       <div>
-        <span>Menu</span>
         <Menu {...this.props}>
           <a id="home" className="menu-item" href="/">Home</a>
           <a id="about" className="menu-item" href="/about">About</a>

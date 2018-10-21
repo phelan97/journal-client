@@ -5,18 +5,12 @@ import './filter-controls.css';
 import store from '../store';
 
 export default class FilterControls extends React.Component {
-  handleFilter(event) {
-    console.log('input changed');
-    // FIXME: change to setLocalFilter? everything should already be loaded
-    store.dispatch(setSearchFilter(event.target.value))
-  }
 
-  // TODO: use redux form or is it overkill?
   render() {
     return (
       <form>
         <legend>Search</legend>
-        <input id="search-field" type="text" onChange={e => this.handleFilter(e)}/>
+        <input id="search-field" type="text" onChange={e => this.props.onSearchUpdate(e.target.value)}/>
         {/* <select name="month">
           <option value="january">January</option>
         </select>
