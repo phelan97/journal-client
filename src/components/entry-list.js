@@ -12,8 +12,6 @@ class EntryList extends React.Component {
   }
 
   render() {
-    console.log('data from filteredItems:', this.props.filteredItems);
-    
     const entriesToRender = this.props.filteredItems.map(element => {
       const dateStr = new Date(element.date).toLocaleDateString();
         return (
@@ -22,8 +20,6 @@ class EntryList extends React.Component {
           </li>
         );
     });
-
-    console.log('data from entriesToRender:', entriesToRender);
 
     return (
       <React.Fragment>

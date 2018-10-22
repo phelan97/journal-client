@@ -10,29 +10,19 @@ import EntryOptionBar from '../entry-option-bar';
 class EntryListPane extends React.Component {
   state = {
     searchTerm: "",
-    resultsPerPage: 1,
-    currentPage: 0,
+    // TODO: try to move this into the page component
+    resultsPerPage: 2,
+    itemStartIndex: 0
   }
 
-  // TODO: card dimensions aren't uniform so search looks weird
+  // TODO: card dimensions aren't uniform so search/navigation looks weird
   handleSearchUpdate = (searchText) => {
     this.setState({searchTerm: searchText, currentPage: 0});
   }
 
-  prevPageHandler = () => {
-    console.log('prev clicked');
-    let newPageIndex = this.state.currentPage - 1;
-    if(newPageIndex < 0) {
-      newPageIndex = 0;
-    }
-    this.setState({currentPage: newPageIndex});
-  }
-
-  nextPageHandler = () => {
-    console.log('next clicked');
-    // TODO: don't allow the current page to go past what's actually possible to display.
-    // the last page is likely to be a partial page so that will also need to be handled
-    this.setState({currentPage: this.state.currentPage + 1});
+  handlePageChange = (pageNum) => {
+    console.log(pageNum);
+    this.setState({itemStartIndex: pageNum*this.state.resultsPerPage})
   }
 
   // TODO: show incomplete entries if data is saved in localStorage
@@ -41,8 +31,8 @@ class EntryListPane extends React.Component {
     const filteredItems = this.props.entries
       .filter(entry => entry.content.includes(this.state.searchTerm));
 
+    const itemStartIndex = this.state.itemStartIndex;
     const resultsPerPage = this.state.resultsPerPage;
-    const itemStartIndex = this.state.currentPage * resultsPerPage;// calculate this
     const pageView = filteredItems.splice(itemStartIndex, resultsPerPage);
 
     return (
@@ -51,7 +41,7 @@ class EntryListPane extends React.Component {
           <FilterControls onSearchUpdate={this.handleSearchUpdate}/>
           <EntryList filteredItems={pageView}/>
           <EntryOptionBar  />
-          <PageControls onBackClick={() => this.prevPageHandler()} onNextClick={() => this.nextPageHandler()} />
+          <PageControls onPageEvent={this.handlePageChange} maxPages={Math.floor(this.props.entries.length/this.state.resultsPerPage)} />
         </div>
       </main>
     );
