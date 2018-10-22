@@ -35,9 +35,8 @@ class EntryEditPane extends React.Component {
   }
 
   handleSave = () => {
-    console.log('save clicked');
-    // save state content to server
-    this.props.dispatch(updateEntry(this.props.editId, this.state.content))
+    this.props.dispatch(updateEntry(this.props.editId, this.state.content));
+    this.props.history.push('/journal');
   }
 
   handleDelete = () => {
@@ -47,7 +46,7 @@ class EntryEditPane extends React.Component {
   }
 
   render() {
-    // FIXME: better message
+    // FIXME: better message?
     if(this.state.noEntryError) {
       return (
         <main>

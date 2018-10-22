@@ -74,7 +74,7 @@ export const updateEntryError = error => ({
   error
 })
 
-export const updateEntry = (id, newData) => (dispatch, getState) => {
+export const updateEntry = (id, content) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/entries/${id}`, {
     method: 'PUT',
@@ -82,7 +82,7 @@ export const updateEntry = (id, newData) => (dispatch, getState) => {
       'Authorization': `Bearer ${authToken}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(newData)
+    body: JSON.stringify({content})
   })
   .then(res => res.json())
   .then(data => dispatch(updateEntrySuccess(data)))

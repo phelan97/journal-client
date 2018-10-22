@@ -43,6 +43,7 @@ export default function userDataReducer(state = initialState, action) {
         entries: [...state.entries, action.entry]
       }
     case UPDATE_ENTRY_SUCCESS:
+      console.log('entry successfully updated');
       return {
         ...state,
         entries: state.entries.map(entry => {

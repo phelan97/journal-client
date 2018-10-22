@@ -10,7 +10,7 @@ import EntryOptionBar from '../entry-option-bar';
 class EntryListPane extends React.Component {
   state = {
     searchTerm: "",
-    resultsPerPage: 1,
+    resultsPerPage: 10,
     currentPage: 0,
   }
 
