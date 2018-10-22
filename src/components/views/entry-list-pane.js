@@ -20,7 +20,6 @@ class EntryListPane extends React.Component {
   }
 
   prevPageHandler = () => {
-    console.log('prev clicked');
     let newPageIndex = this.state.currentPage - 1;
     if(newPageIndex < 0) {
       newPageIndex = 0;
@@ -29,10 +28,12 @@ class EntryListPane extends React.Component {
   }
 
   nextPageHandler = () => {
-    console.log('next clicked');
-    // TODO: don't allow the current page to go past what's actually possible to display.
-    // the last page is likely to be a partial page so that will also need to be handled
-    this.setState({currentPage: this.state.currentPage + 1});
+    let newPageIndex = this.state.currentPage + 1;
+    const maxPageIndex = Math.floor(this.props.entries.length/this.state.resultsPerPage)-1;
+    if(newPageIndex > maxPageIndex) {
+      newPageIndex = maxPageIndex;
+    }
+    this.setState({currentPage: newPageIndex});
   }
 
   // TODO: show incomplete entries if data is saved in localStorage
