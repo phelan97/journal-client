@@ -1,11 +1,11 @@
 
 import React from 'react';
 
-export default function PageControls() {
+export default function PageControls(props) {
   return (
     <div>
-      <button onClick={this.props.onBackClick}>Prev</button>
-      <button onClick={this.props.onNextClick}>Next</button>
+      <button onClick={props.onBackClick}>Prev</button>
+      <button onClick={props.onNextClick}>Next</button>
     </div>
   );
 }

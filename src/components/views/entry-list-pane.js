@@ -20,6 +20,7 @@ class EntryListPane extends React.Component {
   }
 
   prevPageHandler = () => {
+    console.log('prev clicked');
     let newPageIndex = this.state.currentPage - 1;
     if(newPageIndex < 0) {
       newPageIndex = 0;
@@ -28,6 +29,7 @@ class EntryListPane extends React.Component {
   }
 
   nextPageHandler = () => {
+    console.log('next clicked');
     // TODO: don't allow the current page to go past what's actually possible to display.
     // the last page is likely to be a partial page so that will also need to be handled
     this.setState({currentPage: this.state.currentPage + 1});
@@ -49,7 +51,7 @@ class EntryListPane extends React.Component {
           <FilterControls onSearchUpdate={this.handleSearchUpdate}/>
           <EntryList filteredItems={pageView}/>
           <EntryOptionBar  />
-          <PageControls onBackPage={this.prevPageHandler} onNextPage={this.nextPageHandler} />
+          <PageControls onBackClick={() => this.prevPageHandler()} onNextClick={() => this.nextPageHandler()} />
         </div>
       </main>
     );

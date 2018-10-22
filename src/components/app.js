@@ -16,6 +16,7 @@ export default class App extends React.Component {
     console.log(this.props.data);
   }
 
+  // TODO: login should redirect to the main page if the user is already logged in
   render() {
     return (
       <React.Fragment>
