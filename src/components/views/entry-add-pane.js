@@ -29,6 +29,7 @@ export default class EntryAddPane extends React.Component {
   handleSave = () => {
     const newEntry = {content: this.state.content};
     store.dispatch(addEntry(newEntry));
+    localStorage.removeItem('content');
     this.props.history.push('/journal');
   }
 
