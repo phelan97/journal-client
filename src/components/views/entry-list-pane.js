@@ -10,8 +10,8 @@ import EntryOptionBar from '../entry-option-bar';
 class EntryListPane extends React.Component {
   state = {
     searchTerm: "",
-    resultsPerPage: 10,
-    currentPage: 0,
+    resultsPerPage: 1,
+    currentPage: 0
   }
 
   // TODO: card dimensions aren't uniform so search looks weird

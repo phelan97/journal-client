@@ -1,26 +1,12 @@
 
-.entry-date {
-  font-family: 'Lobster', cursive;
-  font-weight: 600;
-  display: block;
-}
-
-.entry-preview {
-  font-family: 'Roboto', sans-serif;
-}
-
-.entry-card {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 3px;
-  width: 70%;
-}
-
 ul {
   list-style: none;
   padding-left: 0;
+  width: 800px;
 }
 
-/* @media only screen and (max-width: ) */
+@media only screen and (max-width: 800px) {
+  ul {
+    width: 100%;
+  }
+}

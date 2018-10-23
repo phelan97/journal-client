@@ -16,7 +16,9 @@ const store = createStore(
         page: pageReducer,
         form: formReducer
     }),
-    composeWithDevTools(applyMiddleware(thunk))
+    // TODO: conditionally use tools based on env
+    //composeWithDevTools(applyMiddleware(thunk))
+    applyMiddleware(thunk)
 );
 
 //Try to grab authToken from localStorage
