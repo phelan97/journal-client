@@ -86,6 +86,7 @@ export const registerError = (err) => ({
 })
 
 export const register = (email, password, firstName, lastName) => dispatch => {
+  console.log(email, password, firstName, lastName);
   //dispatch(registerRequest);
   return (
     fetch(`${API_BASE_URL}/register`, {

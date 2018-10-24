@@ -6,12 +6,15 @@ import './register-form.css';
 
 class RegisterForm extends React.Component {
   render() {
+    if(this.props.submitSucceeded) {
+      return <div>{'Thanks for registering!'}</div>
+    }
     return (
       <main>
         <div className="register-container">
           <form onSubmit={this.props.handleSubmit(values =>
             this.props.dispatch(register(values.email, values.password,
-              values.firstName, values.lastName))
+              values['first-name'], values['last-name']))
             )}>
             <legend>Register</legend>
             <label htmlFor="first-name">First name</label>
@@ -23,7 +26,7 @@ class RegisterForm extends React.Component {
             <label htmlFor="password">Password</label>
             <Field name="password" component="input" type="password" id="password-field" />
             <label htmlFor="password-confirm">Confirm password</label>
-            <Field name="password-confirm" component="input" type="password-confirm" id="password-confirm-field" />
+            <Field name="password-confirm" component="input" type="password" id="password-confirm-field" />
             <button type="submit" onSubmit={this.handleSubmit}>Create account</button>
           </form>
         </div>
