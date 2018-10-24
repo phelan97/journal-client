@@ -1,0 +1,17 @@
+
+h1 {
+  margin-top: 0px;
+  display: inline-block;
+}
+
+header {
+  color: white;
+  background-color: #454545;
+  /* height: 60px; */
+}
+
+header button {
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+}

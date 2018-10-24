@@ -21,6 +21,21 @@ main {
   justify-content: center;
 }
 
+button {
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;

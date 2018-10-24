@@ -15,7 +15,7 @@ function LandingPage(props) {
     <main>
       <div className="landing-container">
         <LoginForm />
-        <Link to='/register'>Register</Link>
+        <Link to='/register'>Don't have an account? Register here!</Link>
       </div>
     </main>
   );

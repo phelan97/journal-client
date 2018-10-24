@@ -2,3 +2,14 @@
 input[type="text"], input[type="password"] {
   display: block;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+form button {
+  width: 80px;
+}

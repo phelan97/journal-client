@@ -1,0 +1,14 @@
+.landing-container {
+  margin-top: 35px;
+  padding: 20px;
+  background-color: #999999;
+}
+
+.landing-container a {
+  color: #9511A7;
+  text-decoration: none;
+}
+
+.landing-container a:hover {
+  text-decoration: underline;
+}

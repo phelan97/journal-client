@@ -6,7 +6,7 @@ import FilterControls from '../filter-controls';
 import PageControls from '../page-controls';
 import EntryList from '../entry-list';
 import EntryOptionBar from '../entry-option-bar';
-
+import './entry-list-pane.css';
 class EntryListPane extends React.Component {
   state = {
     searchTerm: "",
