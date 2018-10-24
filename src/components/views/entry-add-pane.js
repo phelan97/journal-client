@@ -1,6 +1,5 @@
 
 import React from 'react';
-import {reduxForm} from 'redux-form';
 import {addEntry} from '../../actions/user-data';
 import requiresLogin from '../requires-login';
 import AddEntryOptionBar from '../add-entry-option-bar';
@@ -8,7 +7,7 @@ import store from '../../store';
 import './entry-add-pane.css';
 // import {reduxForm} from 'redux-form'
 
-export default class EntryAddPane extends React.Component {
+class EntryAddPane extends React.Component {
 
   state = {content: ''};
 
@@ -50,7 +49,4 @@ export default class EntryAddPane extends React.Component {
   }
 }
 
-// const options = {
-//   form: 'post-entry'
-// };
-// export default requiresLogin()(reduxForm(options)(EntryAddPane));
+export default requiresLogin()(EntryAddPane);

@@ -1,7 +1,6 @@
 
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
-import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import LandingPage from './landing-page';
 import Header from './header';
 import EntryListPane from './views/entry-list-pane';
@@ -12,11 +11,6 @@ import RegisterForm from './register-form';
 
 export default class App extends React.Component {
 
-  componentDidMount() {
-    console.log(this.props.data);
-  }
-
-  // TODO: login should redirect to the main page if the user is already logged in
   render() {
     return (
       <React.Fragment>

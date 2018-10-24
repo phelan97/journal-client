@@ -1,7 +1,6 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import {reduxForm} from 'redux-form';
 import {Link} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import EditEntryOptionBar from '../edit-entry-option-bar';
@@ -46,7 +45,6 @@ class EntryEditPane extends React.Component {
   }
 
   render() {
-    // FIXME: better message?
     if(this.state.noEntryError) {
       return (
         <main>
@@ -64,9 +62,8 @@ class EntryEditPane extends React.Component {
   }
 }
 
-// TODO: wrap with requiresLogin
 const mapStateToProps = (state) => ({
   editId: state.data.editId,
   entry: state.data.entries.find(entry => entry.id === state.data.editId)
 });
-export default connect(mapStateToProps)(EntryEditPane);
+export default requiresLogin()(connect(mapStateToProps)(EntryEditPane));

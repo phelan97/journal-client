@@ -1,6 +1,5 @@
 
 import React from 'react';
-import JournalMenu from '../components/journal-menu';
 import {connect} from 'react-redux';
 import store from '../store';
 import {clearAuth} from '../actions/auth';
@@ -18,7 +17,6 @@ import './header.css';
     return (
       <header>
         <h1>Your Journal</h1>
-        {/* <JournalMenu outerContainerId={"Header"}/> */}
         {this.props.loggedIn ? logout : ''}
       </header>
     );

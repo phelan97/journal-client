@@ -6,8 +6,7 @@ import LoginForm from './login-form';
 import './landing-page.css';
 
 function LandingPage(props) {
-  if(props.loggedIn) { 
-    console.log(props.loggedIn);
+  if(props.loggedIn) {
     return <Redirect to="/journal" />
   }
 

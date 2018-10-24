@@ -58,7 +58,7 @@ export const deleteEntry = (id) => (dispatch, getState) => {
   })
   .catch(err => {
     // FIXME:
-    console.log(err);
+    // console.log(err);
   })
 }
 
