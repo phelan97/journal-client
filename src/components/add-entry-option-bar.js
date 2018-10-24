@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 export default function AddEntryOptionBar(props) {
   return (
-    <div>
+    <div className="options-add-entry">
       <button>
         <Link to="/journal">Back</Link>
       </button>

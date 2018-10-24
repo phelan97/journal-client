@@ -41,9 +41,10 @@ export default class EntryAddPane extends React.Component {
   render() {
     return (
       <main>
-        {/* FIXME: configure */}
-        <textarea onChange={e => this.handleOnChange(e)} value={this.state.content}></textarea>
-        <AddEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
+        <div className="add-entry-container">
+          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content}></textarea>
+          <AddEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
+        </div>
       </main>
     );
   }
