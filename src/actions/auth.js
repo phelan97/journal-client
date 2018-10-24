@@ -31,7 +31,7 @@ export const authError = (error) => ({
   error
 });
 
-// TODO: remove if not in use
+// TODO: currently no automatic logout
 export const SHOW_LOGOUT_WARNING = "DISPLAY_LOGOUT_WARNING";
 export const showLogoutWarning = (logoutWarningVisible) => ({
   type: SHOW_LOGOUT_WARNING,
@@ -68,6 +68,45 @@ export const login = (email, password) => dispatch => {
               ? 'Incorrect username or password'
               : 'Unable to log in. Please try again';
       dispatch(authError(err));
+
+      // TODO: return error with Promise.reject
+    })
+  );
+};
+
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const registerSuccess = () => ({
+  type: REGISTER_SUCCESS
+});
+
+export const REGISTER_ERROR = "REGISTER_ERROR";
+export const registerError = (err) => ({
+  type: REGISTER_ERROR,
+  err
+})
+
+export const register = (email, password, firstName, lastName) => dispatch => {
+  //dispatch(registerRequest);
+  return (
+    fetch(`${API_BASE_URL}/register`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email,
+            password,
+            firstName,
+            lastName
+        })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(() => dispatch(registerSuccess()))
+    .catch(err => {
+      // TODO: say that an account couldn't be made. Provide a condition
+      // (email already in use, try again; passwords should match at this point already)
+      dispatch(registerError(err));
 
       // TODO: return error with Promise.reject
     })

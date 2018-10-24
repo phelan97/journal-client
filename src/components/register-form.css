@@ -1,0 +1,21 @@
+
+input[type="text"], input[type="password"] {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+form button {
+  width: 125px;
+}
+
+/* .register-container {
+  display: block;
+  width: 600px;
+  background-color: #999999;
+} */
