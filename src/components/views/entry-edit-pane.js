@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import EditEntryOptionBar from '../edit-entry-option-bar';
 import {deleteEntry, updateEntry} from '../../actions/user-data';
-import './entry-add-pane.css';
+import './entry-edit-pane.css';
 
 // TODO: breaks on refresh. Use localStorage
 class EntryEditPane extends React.Component {
@@ -55,8 +55,10 @@ class EntryEditPane extends React.Component {
     }
     return (
       <main>
-        <textarea onChange={e => this.handleOnChange(e)} value={this.state.content}></textarea>
-        <EditEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
+        <div className="edit-entry-container">
+          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={40}></textarea>
+          <EditEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
+        </div>
       </main>
     );
   }

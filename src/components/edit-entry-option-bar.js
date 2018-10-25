@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 export default function AddEntryOptionBar(props) {
   // TODO: prompt about not saving
   return (
-    <div>
+    <div className="options-edit-entry">
       <button>
         <Link to="/journal">Back</Link>
       </button>

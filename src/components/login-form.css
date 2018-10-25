@@ -1,6 +1,7 @@
 
 input[type="text"], input[type="password"] {
   display: block;
+  max-width: 35ex;
 }
 
 form {

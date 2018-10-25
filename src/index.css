@@ -8,6 +8,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #E2E1E0; */
+  background-color: #CCBDA0;
 }
 
 code {
@@ -25,7 +27,8 @@ button {
   padding: 5px 10px;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: white;
+  margin-right: 4px;
+  background-color: #F6F6F6;
   border: 1px solid black;
   border-radius: 3px;
   transition: 0.3s;

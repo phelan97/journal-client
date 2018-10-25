@@ -2,10 +2,12 @@
 .entry-card {
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid black;
+  padding: 10px 15px;
+  /* border: 1px solid gray; */
   border-radius: 3px;
   width: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: #F6F6F6;
 }
 
 .entry-date {
@@ -17,4 +19,9 @@
 
 .entry-preview {
   font-family: 'Roboto', sans-serif;
+}
+
+.entry-buttons {
+  display: flex;
+  justify-content: flex-end;
 }

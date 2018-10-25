@@ -13,10 +13,14 @@ export default class Entry extends React.Component {
       >
         <span className="entry-date">{this.props.dateStr}</span>
         <span className="entry-preview">{this.props.content}</span>
-        <button onClick={() => store.dispatch(setEditing(this.props.id))}>
-          <Link to="/edit-entry">Edit</Link>
-        </button>
-        <button onClick={e => store.dispatch(deleteEntry(this.props.id))}>Delete</button>
+        <div className="entry-buttons">
+          <Link to="/edit-entry">
+            <button onClick={() => store.dispatch(setEditing(this.props.id))}>
+              Edit
+            </button>
+          </Link>
+          <button onClick={e => store.dispatch(deleteEntry(this.props.id))}>Delete</button>
+        </div>
       </div>
     );
   }

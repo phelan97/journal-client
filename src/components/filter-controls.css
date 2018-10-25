@@ -1,4 +1,4 @@
 
-.search-field {
-  display: block;
+#search-field {
+  width: 40ex;
 }

@@ -9,12 +9,25 @@ import './entry-add-pane.css';
 
 class EntryAddPane extends React.Component {
 
-  state = {content: ''};
+  state = {
+    content: '',
+    placeholders: [
+      "How's today going?",
+      "Write something about the day!",
+      "What are you thinking about right now?",
+      "How are you feeling today?",
+      "Any news?"
+    ],
+    placeholderIndex: 0
+  };
 
   componentDidMount() {
     const content = localStorage.getItem('content');
     if(content) {
       this.setState({content});
+    } else {
+      const placeholderIndex = Math.floor(Math.random() * this.state.placeholders.length);
+      this.setState({placeholderIndex})
     }
   }
 
@@ -41,7 +54,7 @@ class EntryAddPane extends React.Component {
     return (
       <main>
         <div className="add-entry-container">
-          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content}></textarea>
+          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={20} placeholder={this.state.placeholders[this.state.placeholderIndex]}></textarea>
           <AddEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
         </div>
       </main>

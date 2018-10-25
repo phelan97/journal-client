@@ -5,12 +5,12 @@ import requiresLogin from '../requires-login';
 import FilterControls from '../filter-controls';
 import PageControls from '../page-controls';
 import EntryList from '../entry-list';
-import EntryOptionBar from '../entry-option-bar';
+import AddEntryButton from '../add-entry-button';
 import './entry-list-pane.css';
 class EntryListPane extends React.Component {
   state = {
     searchTerm: "",
-    resultsPerPage: 1,
+    resultsPerPage: 3,
     currentPage: 0
   }
 
@@ -29,7 +29,7 @@ class EntryListPane extends React.Component {
 
   nextPageHandler = () => {
     let newPageIndex = this.state.currentPage + 1;
-    const maxPageIndex = Math.floor(this.props.entries.length/this.state.resultsPerPage)-1;
+    const maxPageIndex = Math.ceil(this.props.entries.length/this.state.resultsPerPage)-1;
     if(newPageIndex > maxPageIndex) {
       newPageIndex = maxPageIndex;
     }
@@ -50,8 +50,8 @@ class EntryListPane extends React.Component {
       <main>
         <div className="entry-list-container">
           <FilterControls onSearchUpdate={this.handleSearchUpdate}/>
+          <AddEntryButton  />
           <EntryList filteredItems={pageView}/>
-          <EntryOptionBar  />
           <PageControls onBackClick={() => this.prevPageHandler()} onNextClick={() => this.nextPageHandler()} />
         </div>
       </main>

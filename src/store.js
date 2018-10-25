@@ -1,7 +1,7 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
-//import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
 import authReducer from './reducers/auth';
 import userDataReducer from './reducers/user-data';
@@ -16,9 +16,7 @@ const store = createStore(
         page: pageReducer,
         form: formReducer
     }),
-    // TODO: conditionally use tools based on env
-    //composeWithDevTools(applyMiddleware(thunk))
-    applyMiddleware(thunk)
+    composeWithDevTools(applyMiddleware(thunk))
 );
 
 //Try to grab authToken from localStorage
