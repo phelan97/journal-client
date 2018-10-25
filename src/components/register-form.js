@@ -2,11 +2,20 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {Field, reduxForm} from 'redux-form';
+import Input from './input';
 import {register, login} from '../actions/auth';
 import './register-form.css';
 
+import {
+  required,
+  nonEmpty,
+  password,
+  email
+} from '../validators';
 class RegisterForm extends React.Component {
+  // TODO: doesn't check to see if the passwords match
   render() {
+    // TODO: doesn't automatically go to a logged in page
     if(this.props.submitSucceeded) {
       return <Redirect to="/login" />;
     }
@@ -19,15 +28,20 @@ class RegisterForm extends React.Component {
             )}>
             <legend>Register</legend>
             <label htmlFor="first-name">First name</label>
-            <Field name="first-name" component="input" type="text" id="first-name-field" />
+            <Field name="first-name" component={Input} type="text" id="first-name-field" 
+              validate={[required, nonEmpty]}/>
             <label htmlFor="last-name">Last name</label>
-            <Field name="last-name" component="input" type="text" id="last-name-field" />
+            <Field name="last-name" component={Input} type="text" id="last-name-field"
+              validate={[required, nonEmpty]}/>
             <label htmlFor="email">Email</label>
-            <Field name="email" component="input" type="text" id="email-field" />
+            <Field name="email" component={Input} type="text" id="email-field"
+              validate={[required, nonEmpty, email]}/>
             <label htmlFor="password">Password</label>
-            <Field name="password" component="input" type="password" id="password-field" />
+            <Field name="password" component={Input} type="password" id="password-field"
+              validate={[required, nonEmpty, password]}/>
             <label htmlFor="password-confirm">Confirm password</label>
-            <Field name="password-confirm" component="input" type="password" id="password-confirm-field" />
+            <Field name="password-confirm" component={Input} type="password" id="password-confirm-field"
+              validate={[required, nonEmpty, password]}/>
             <button type="submit" onSubmit={this.handleSubmit}>Create account</button>
           </form>
         </div>

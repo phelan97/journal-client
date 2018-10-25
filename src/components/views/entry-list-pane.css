@@ -2,3 +2,9 @@ button a {
   text-decoration: none;
   color: black;
 }
+
+@media only screen and (max-width: 800px) {
+  .entry-list-container {
+    width: 90%;
+  }
+}
