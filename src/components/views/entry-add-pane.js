@@ -2,7 +2,7 @@
 import React from 'react';
 import {addEntry} from '../../actions/user-data';
 import requiresLogin from '../requires-login';
-import AddEntryOptionBar from '../add-entry-option-bar';
+import EntryOptionBar from '../entry-option-bar';
 import store from '../../store';
 import './entry-add-pane.css';
 // import {reduxForm} from 'redux-form'
@@ -55,7 +55,7 @@ class EntryAddPane extends React.Component {
       <main>
         <div className="add-entry-container">
           <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={20} placeholder={this.state.placeholders[this.state.placeholderIndex]}></textarea>
-          <AddEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
+          <EntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
         </div>
       </main>
     );

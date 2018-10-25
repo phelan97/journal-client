@@ -10,10 +10,6 @@
   background-color: #F6F6F6;
 }
 
-.button-delete:hover {
-  background-color: #900606;
-}
-
 .entry-date {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;

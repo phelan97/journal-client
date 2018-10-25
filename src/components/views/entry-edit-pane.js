@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import requiresLogin from '../requires-login';
-import EditEntryOptionBar from '../edit-entry-option-bar';
+import EntryOptionBar from '../entry-option-bar';
 import {deleteEntry, updateEntry} from '../../actions/user-data';
 import './entry-edit-pane.css';
 
@@ -57,7 +57,7 @@ class EntryEditPane extends React.Component {
       <main>
         <div className="edit-entry-container">
           <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={40}></textarea>
-          <EditEntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
+          <EntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
         </div>
       </main>
     );

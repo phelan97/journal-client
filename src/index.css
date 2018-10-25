@@ -44,3 +44,7 @@ button a:hover,
 button:hover a {
   color: #F6F6F6;
 }
+
+.button-delete:hover {
+  background-color: #900606;
+}
