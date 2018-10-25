@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
 
     return (
       <div className="login-container">
-        <form onSubmit={this.props.handleSubmit(values =>
+        <form className="login-form" onSubmit={this.props.handleSubmit(values =>
         this.props.dispatch(login(values.email, values.password))
         )}>
           <legend>Log in</legend>

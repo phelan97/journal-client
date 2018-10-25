@@ -20,14 +20,21 @@ input[type="text"], input[type="password"] {
   max-width: 35ex;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
 
-form button {
+.login-form button {
+  margin-top: 8px;
   width: 80px;
 }
 
+.login-form legend {
+  margin-bottom: 15px;
+  font-size: 1.25em;
+  border-bottom: 1px solid white;
+}
