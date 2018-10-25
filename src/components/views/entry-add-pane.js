@@ -13,7 +13,7 @@ class EntryAddPane extends React.Component {
     content: '',
     placeholders: [
       "How's today going?",
-      "Write something about the day!",
+      "Write something about your day!",
       "What are you thinking about right now?",
       "How are you feeling today?",
       "Any news?"

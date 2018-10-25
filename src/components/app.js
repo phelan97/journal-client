@@ -14,18 +14,19 @@ export default class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
         <Router>
-          <Switch>
-            {/* <Route exact path="/:entryId" component={ } /> */}
-            <Redirect exact from="/" to="/login" />
-            <Route exact path="/login" component={LandingPage} />
-            <Route exact path="/register" component={RegisterForm} />
-            <Route exact path="/journal" component={EntryListPane} />
-            <Route exact path="/add-entry" component={EntryAddPane} />
-            <Route exact path="/edit-entry" component={EntryEditPane} />
-            <Route component={PageNotFound} />
-          </Switch>
+          <div>
+            <Header />
+            <Switch>
+              <Redirect exact from="/" to="/login" />
+              <Route exact path="/login" component={LandingPage} />
+              <Route exact path="/register" component={RegisterForm} />
+              <Route exact path="/journal" component={EntryListPane} />
+              <Route exact path="/add-entry" component={EntryAddPane} />
+              <Route exact path="/edit-entry" component={EntryEditPane} />
+              <Route component={PageNotFound} />
+            </Switch>
+          </div>
         </Router>
       </React.Fragment>
     );

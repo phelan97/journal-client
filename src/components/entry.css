@@ -10,8 +10,8 @@
   background-color: #F6F6F6;
 }
 
-.entry-card button {
-  background-color: #99A5C0;
+.button-delete:hover {
+  background-color: #900606;
 }
 
 .entry-date {

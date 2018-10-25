@@ -1,5 +1,6 @@
 
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import store from '../store';
 import {clearAuth} from '../actions/auth';
@@ -16,7 +17,9 @@ import './header.css';
     );
     return (
       <header>
-        <h1>Your Journal</h1>
+        <Link to="/login">
+          <h1>{this.props.loggedIn ? 'Your Journal' : 'Cloud Journal'}</h1>
+        </Link>
         {this.props.loggedIn ? logout : ''}
       </header>
     );

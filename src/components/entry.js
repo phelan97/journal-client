@@ -15,11 +15,11 @@ export default class Entry extends React.Component {
         <span className="entry-preview">{this.props.content}</span>
         <div className="entry-buttons">
           <Link to="/edit-entry">
-            <button onClick={() => store.dispatch(setEditing(this.props.id))}>
+            <button className="button-edit" onClick={() => store.dispatch(setEditing(this.props.id))}>
               Edit
             </button>
           </Link>
-          <button onClick={e => store.dispatch(deleteEntry(this.props.id))}>Delete</button>
+          <button className="button-delete" onClick={e => store.dispatch(deleteEntry(this.props.id))}>Delete</button>
         </div>
       </div>
     );

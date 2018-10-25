@@ -1,13 +1,14 @@
 
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import {Field, reduxForm} from 'redux-form';
-import {register} from '../actions/auth';
+import {register, login} from '../actions/auth';
 import './register-form.css';
 
 class RegisterForm extends React.Component {
   render() {
     if(this.props.submitSucceeded) {
-      return <div>{'Thanks for registering!'}</div>
+      return <Redirect to="/login" />;
     }
     return (
       <main>

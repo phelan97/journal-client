@@ -9,7 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #E2E1E0; */
-  background-color: #CCBDA0;
+  background-color: #DFD2B7;
 }
 
 code {
@@ -28,7 +28,7 @@ button {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-right: 4px;
-  background-color: white;
+  background-color: #F6F6F6;
   border: 1px solid black;
   border-radius: 3px;
   transition: 0.3s;
@@ -36,6 +36,11 @@ button {
 }
 
 button:hover {
-  background-color: red;
-  color: white;
+  background-color: black;
+  color: #F6F6F6;
+}
+
+button a:hover,
+button:hover a {
+  color: #F6F6F6;
 }

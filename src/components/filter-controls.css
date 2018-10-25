@@ -2,3 +2,8 @@
 #search-field {
   width: 40ex;
 }
+
+form {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
