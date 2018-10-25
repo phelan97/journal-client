@@ -10,6 +10,10 @@
   background-color: #F6F6F6;
 }
 
+.entry-card button {
+  background-color: #99A5C0;
+}
+
 .entry-date {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;

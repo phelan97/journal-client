@@ -1,6 +1,7 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './add-entry-button.css';
 
 export default function AddEntryButton() {
   return (

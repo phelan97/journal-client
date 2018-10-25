@@ -1,7 +1,8 @@
 .landing-container {
   margin-top: 35px;
   padding: 20px;
-  background-color: #999999;
+  background-color: #555555;
+  color: white;
 }
 
 .landing-container a {
@@ -11,4 +12,8 @@
 
 .landing-container a:hover {
   text-decoration: underline;
+}
+
+.landing-container button {
+  background-color: white;
 }
