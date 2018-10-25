@@ -22,7 +22,7 @@ class RegisterForm extends React.Component {
     return (
       <main>
         <div className="register-container">
-          <form onSubmit={this.props.handleSubmit(values =>
+          <form className="register-form" onSubmit={this.props.handleSubmit(values =>
             this.props.dispatch(register(values.email, values.password,
               values['first-name'], values['last-name']))
             )}>

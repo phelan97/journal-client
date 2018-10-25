@@ -3,19 +3,36 @@ input[type="text"], input[type="password"] {
   display: block;
 }
 
-form {
+.register-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 35px;
   margin-bottom: 15px;
+  padding: 20px;
+  padding-bottom: 10px;
+  background-color: #555555;
+  color: white;
 }
 
-form button {
+.register-form button {
   width: 125px;
 }
 
-/* .register-container {
-  display: block;
-  width: 600px;
-  background-color: #999999;
-} */
+.register-form legend {
+  margin-bottom: 15px;
+  font-size: 1.25em;
+  border-bottom: 1px solid white;
+  font-weight: 500;
+}
+
+.register-form button {
+  margin-top: 20px;
+  width: 120px;
+  width: 100%;
+  align-self: center;
+}
+
+.form-error {
+  color: #ff8888;
+}
