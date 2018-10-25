@@ -1,4 +1,20 @@
 
+.login-container {
+  margin-top: 35px;
+  padding: 20px;
+  background-color: #555555;
+  color: white;
+}
+
+.login-container a {
+  color: rgb(251, 227, 86);
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
 input[type="text"], input[type="password"] {
   display: block;
   max-width: 35ex;
@@ -14,3 +30,4 @@ form {
 form button {
   width: 80px;
 }
+
