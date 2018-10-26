@@ -11,7 +11,13 @@ export default function LandingPage(props) {
     <main>
       <div className="landing-container">
         <div className="info-container">
-          <h2>Fast, convenient journaling</h2>
+          <h2>Convenient journaling on any device</h2>
+          <p>Journaling offers a variety of personal benefits. Maybe you're already familiar
+            with the advantages of regularly journaling. Maybe not. Either way, it's easier than ever to get started! 
+          </p>
+          <p>Cloud Journal works on any device, and makes it easy to post and manage journal entries. Accessing your journal
+            is as simple as logging in!
+          </p>
           <Link to='/login'>Already have an account? Sign in!</Link>
         </div>
         <RegisterForm />

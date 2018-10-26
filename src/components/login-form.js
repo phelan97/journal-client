@@ -25,7 +25,6 @@ class LoginForm extends React.Component {
             <button type="submit" onSubmit={this.handleSubmit}>Log In</button>
             <Link to='/register'>Don't have an account? Register here!</Link>
           </form>
-          
         </div>
     );
   }
