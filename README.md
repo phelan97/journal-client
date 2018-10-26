@@ -1,9 +1,9 @@
 # Summary
 A simple journal app that allows users to create and use accounts to access private journals. This app was created for Thinkful's Engineering Immersion program in order to practice building a full stack web application. The app idea and design is my own.
 
-A live version of the site can be found [right here](https://capstone-journal-app.herokuapp.com/journal), and can be accessed with a demo account if you don't want to register.
-Demo email: user@demo.com
-Demo password: thinkfuldemoaccountei24
+A live version of the site can be found [right here](https://capstone-journal-app.herokuapp.com/journal), and can be accessed with a demo account if you don't want to register.<br/>
+Demo email: user@demo.com<br/>
+Demo password: thinkfuldemoaccountei24<br/>
 
 # Screenshots and additional information
 ![The main landing page](https://github.com/phelan97/journal-client/screenshots/landing-page.png)
