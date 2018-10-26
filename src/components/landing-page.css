@@ -1,4 +1,4 @@
-main a {
+.landing-container a {
   /* color: rgb(251, 227, 86); */
   color: rgb(255, 245, 98);
   /* color: blue; */
@@ -8,7 +8,7 @@ main a {
   margin-left: 10px;
 }
 
-main a:hover {
+.landing-container a:hover {
   text-decoration: underline;
 }
 
