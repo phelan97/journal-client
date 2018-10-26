@@ -54,7 +54,7 @@ class EntryAddPane extends React.Component {
     return (
       <main>
         <div className="add-entry-container">
-          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={20} placeholder={this.state.placeholders[this.state.placeholderIndex]}></textarea>
+          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={30} placeholder={this.state.placeholders[this.state.placeholderIndex]}></textarea>
           <EntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
         </div>
       </main>

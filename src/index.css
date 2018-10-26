@@ -1,4 +1,6 @@
-* { box-sizing: border-box }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -47,4 +49,8 @@ button:hover a {
 
 .button-delete:hover {
   background-color: #900606;
+}
+
+.entry-card, legend, label, textarea, input {
+  font-size: 16px;
 }

@@ -7,25 +7,22 @@ import EntryOptionBar from '../entry-option-bar';
 import {deleteEntry, updateEntry} from '../../actions/user-data';
 import './entry-edit-pane.css';
 
-// TODO: breaks on refresh. Use localStorage
+// TODO: breaks on refresh. Use localStorage or redirect
 class EntryEditPane extends React.Component {
 
   state = {
-    content: '',
-    noEntryError: false
+    content: ''
   };
-  
-  componentWillMount() {
-    if(!this.props.entry || !this.props.editId) {
-      this.setState({noEntryError: true});
-    }
-  }
 
   componentDidMount() {
-    const entryData = this.props.entry.content
-    if(entryData) {
-      this.setState({content: entryData});
+    // redirect back to journal if an entry isn't set (protects reload)
+    if(!this.props.entry || !this.props.editId) {
+      this.props.history.push('/journal');
     }
+
+    // load entry data
+    const entryData = this.props.entry.content;
+    this.setState({content: entryData});
   }
 
   handleOnChange(event) {
@@ -45,18 +42,10 @@ class EntryEditPane extends React.Component {
   }
 
   render() {
-    if(this.state.noEntryError) {
-      return (
-        <main>
-          <div>Could not locate entry</div>
-          <Link to="/journal">Back</Link>
-        </main>
-      );
-    }
     return (
       <main>
         <div className="edit-entry-container">
-          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={40}></textarea>
+          <textarea onChange={e => this.handleOnChange(e)} value={this.state.content} rows={30}></textarea>
           <EntryOptionBar onSave={() => this.handleSave()} onDelete={() => this.handleDelete()}/>
         </div>
       </main>

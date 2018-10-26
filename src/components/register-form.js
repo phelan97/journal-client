@@ -10,8 +10,11 @@ import {
   required,
   nonEmpty,
   password,
-  email
+  email,
+  matches
 } from '../validators';
+const matchesPassword = matches('password');
+
 class RegisterForm extends React.Component {
   // TODO: doesn't check to see if the passwords match
   render() {
@@ -41,7 +44,7 @@ class RegisterForm extends React.Component {
               validate={[required, nonEmpty, password]}/>
             <label htmlFor="password-confirm">Confirm password</label>
             <Field name="password-confirm" component={Input} type="password" id="password-confirm-field"
-              validate={[required, nonEmpty, password]}/>
+              validate={[required, nonEmpty, password, matchesPassword]}/>
             <button type="submit" onSubmit={this.handleSubmit}>Create account</button>
           </form>
         </div>

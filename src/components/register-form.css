@@ -1,6 +1,7 @@
 
 input[type="text"], input[type="password"] {
   display: block;
+  width: 100%;
 }
 
 .register-form {
@@ -9,8 +10,8 @@ input[type="text"], input[type="password"] {
   justify-content: center;
   margin-top: 35px;
   margin-bottom: 15px;
-  padding: 20px;
-  padding-bottom: 10px;
+  padding: 30px;
+  width: 350px;
   background-color: #555555;
   color: white;
 }
@@ -28,7 +29,7 @@ input[type="text"], input[type="password"] {
 
 .register-form button {
   margin-top: 20px;
-  width: 120px;
+  /* width: 120px; */
   width: 100%;
   align-self: center;
 }

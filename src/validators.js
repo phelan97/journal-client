@@ -8,3 +8,8 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 export const email = value => validateEmail(value) ? undefined : 'You must provide a valid email address';
+
+export const matches = field => (value, allValues) =>
+field in allValues && value.trim() === allValues[field].trim()
+    ? undefined
+    : 'Does not match';
