@@ -10,7 +10,7 @@ import './header.css';
  class Header extends React.Component {
    render() {
     const logout = (
-      <button onClick={() => {
+      <button className="button-logout" onClick={() => {
         clearAuthToken();
         store.dispatch(clearAuth());
       }}>Log out</button>

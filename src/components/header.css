@@ -2,12 +2,16 @@
 h1 {
   margin-top: 0px;
   display: inline-block;
+  /* min-width: 210px; */
+  flex-shrink: 1;
 }
 
 header {
-  padding: 10px 15px 0px;
+  padding: 10px 10px 0px;
   color: white;
   background-color: #555555;
+  display: flex;
+  justify-content: space-between;
 }
 
 header a, header a:hover,
@@ -15,8 +19,22 @@ header a:visited {
   color: white;
 }
 
-header .login-controls,
-header button {
-  float: right;
-  margin-top: 15px;
+.login-controls,
+.button-logout {
+  justify-self: flex-end;
+  margin-top: 10px;
+  /* float: right; */
+}
+
+/* .login-controls {
+  min-width: 150px
+} */
+
+.login-controls {
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.login-controls button {
+  flex-shrink: 1;
 }
