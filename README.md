@@ -6,8 +6,13 @@ Demo email: user@demo.com<br/>
 Demo password: thinkfuldemoaccountei24<br/>
 
 # Screenshots and additional information
-![The main landing page](https://raw.githubusercontent.com/phelan97/journal-client/master/screenshots/landing-page.png)
-![What the user sees when they log in for the first time](https://raw.githubusercontent.com/phelan97/journal-client/master/screenshots/journal-main.png)
+The main landing page:
+![Screenshot of the main landing page](https://raw.githubusercontent.com/phelan97/journal-client/master/screenshots/landing-page.png)
+<br/>
+What the user sees when they log in for the first time
+![Screenshot of the user's first login](https://raw.githubusercontent.com/phelan97/journal-client/master/screenshots/journal-main.png)
+<br/>
+One of the possible screens when adding an entry
 ![One of the possible screens when adding an entry](https://raw.githubusercontent.com/phelan97/journal-client/master/screenshots/add-post.png)
 
 My goal is to eventually add additional features such as stat tracking, attachments, rich rext editing, and basic account options.
