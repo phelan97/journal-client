@@ -1,0 +1,27 @@
+main a {
+  color: rgb(251, 227, 86);
+  /* color: blue; */
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+.info-container {
+  background-color: red;
+  max-width: 450px;
+  margin: 35px 20px 15px 15px;
+  width: 100%;
+  position: relative;
+}
+
+.landing-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 100%
+}

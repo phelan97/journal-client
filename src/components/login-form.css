@@ -4,11 +4,18 @@
   padding: 20px;
   background-color: #555555;
   color: white;
+  /* margin-left: auto; margin-right: auto; */
+
+  display: flex;
+  justify-content: center;
+  /* max-width: 900px;
+  width: auto; */
 }
 
 .login-container a {
   color: rgb(251, 227, 86);
   text-decoration: none;
+  margin-top: 10px;
 }
 
 .login-container a:hover {

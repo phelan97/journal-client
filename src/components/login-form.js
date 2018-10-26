@@ -13,19 +13,20 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <div className="login-container">
-        <form className="login-form" onSubmit={this.props.handleSubmit(values =>
-        this.props.dispatch(login(values.email, values.password))
-        )}>
-          <legend>Log in</legend>
-          <label htmlFor="email">Email</label>
-          <Field name="email" component="input" type="text" id="email-field" />
-          <label htmlFor="password">Password</label>
-          <Field name="password" component="input" type="password" id="password-field" />
-          <button type="submit" onSubmit={this.handleSubmit}>Log In</button>
-        </form>
-        <Link to='/register'>Don't have an account? Register here!</Link>
-      </div>
+        <div className="login-container">
+          <form className="login-form" onSubmit={this.props.handleSubmit(values =>
+          this.props.dispatch(login(values.email, values.password))
+          )}>
+            <legend>Log in</legend>
+            <label htmlFor="email">Email</label>
+            <Field name="email" component="input" type="text" id="email-field" />
+            <label htmlFor="password">Password</label>
+            <Field name="password" component="input" type="password" id="password-field" />
+            <button type="submit" onSubmit={this.handleSubmit}>Log In</button>
+            <Link to='/register'>Don't have an account? Register here!</Link>
+          </form>
+          
+        </div>
     );
   }
 }

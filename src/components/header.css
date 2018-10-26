@@ -15,6 +15,7 @@ header a:visited {
   color: white;
 }
 
+header .login-controls,
 header button {
   float: right;
   margin-top: 15px;

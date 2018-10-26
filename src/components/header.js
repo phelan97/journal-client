@@ -15,12 +15,19 @@ import './header.css';
         store.dispatch(clearAuth());
       }}>Log out</button>
     );
+
+    const loginControls = (
+      <div className="login-controls">
+        <Link to="/login"><button>Sign in</button></Link>
+        <Link to="/register"><button>Register</button></Link>
+      </div>
+    )
     return (
       <header>
-        <Link to="/login">
+        <Link to={this.props.loggedIn ? "/journal" : "/home"}>
           <h1>{this.props.loggedIn ? 'Your Journal' : 'Cloud Journal'}</h1>
         </Link>
-        {this.props.loggedIn ? logout : ''}
+        {this.props.loggedIn ? logout : loginControls}
       </header>
     );
   }
