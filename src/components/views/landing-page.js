@@ -1,12 +1,14 @@
 
 import React from 'react';
-import RegisterForm from './register-form';
-import {Link} from 'react-router-dom';
+import RegisterForm from '../register-form';
+import {connect} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
 import './landing-page.css';
 
-console.log(RegisterForm);
-
-export default function LandingPage(props) {
+function LandingPage(props) {
+  if(props.loggedIn) {
+    return <Redirect to="/journal" />
+  }
   return (
     <main>
       <div className="landing-container">
@@ -25,5 +27,10 @@ export default function LandingPage(props) {
     </main>
   );
 }
+
+const mapStateToProps = (state) => ({
+  loggedIn: state.auth.currentUser !== null
+});
+export default connect(mapStateToProps)(LandingPage);
 
 

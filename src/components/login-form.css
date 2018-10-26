@@ -1,9 +1,6 @@
 
 .login-container {
   margin-top: 35px;
-  padding: 20px;
-  background-color: #555555;
-  color: white;
   /* margin-left: auto; margin-right: auto; */
 
   display: flex;
@@ -33,6 +30,10 @@ input[type="text"], input[type="password"] {
   justify-content: center;
   margin-top: 0px;
   margin-bottom: 15px;
+  width: 60%;
+  background-color: #555555;
+  padding: 20px;
+  color: white;
 }
 
 .login-form button {
@@ -45,4 +46,8 @@ input[type="text"], input[type="password"] {
   font-size: 1.25em;
   border-bottom: 1px solid white;
   font-weight: 500;
+}
+
+.login-container {
+
 }

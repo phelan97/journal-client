@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import LandingPage from './landing-page';
+import LandingPage from './views/landing-page';
 import Header from './header';
 import EntryListPane from './views/entry-list-pane';
 import EntryAddPane from './views/entry-add-pane';
